@@ -1,0 +1,50 @@
+body {
+    background-color: white;
+}
+a.nav-link {
+    color: #0a3ba2;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: rgb(62 116 232);
+}
+.lucas {
+    background-image: url('/static/images/lucas.jpg');
+    background-size: cover;
+}
+.text-primary {
+    background: rgba(255, 255, 255, 0.428);
+    min-height: 70px;
+    min-width: 20rem;
+}
+
+.gallery {
+    height: 250px;
+    width: 100%;
+}
+
+
+.notice {
+    height: 200px;
+}
+
+.bg-blue {
+    background-color: #0a3ba2;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #0b3ba2
+}
+.jumbotron-contain {
+    background: #ffffff5e;
+    font-weight: 400;
+}
+.footer {
+    font-weight: 100;
+}
+
+.footer ul {
+    list-style: none;
+}
+.text-justify {
+    text-align: justify;
+}

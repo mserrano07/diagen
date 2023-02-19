@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Jumbotron image -->
+    <div class="vh-100 lucas mb-4 d-flex">
+        <div class="container align-items-center">
+            <div class="row align-items-center mx-auto h-100">
+                <div class="col-12">
+                    <div class="p-4 text-justify jumbotron-contain">Diagen C.A es una empresa de biotecnología con más de 10 años de experiencia que ofrece servicios de formulación y fabricación de kits reactivos para distintos tipos de análisis clínicos. Chagas, Leishmaniasis Visceral y Covid-19</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Jumbotron -->
+
+    <div id="products" class="container">
+      <div class="row">
+        <div class="col-12 col-md-5 col-lg-3">
+          <img src="{% static 'images/pexels-ivan-samkov-9628853.jpg' %}" class="img-fluid" />
+        </div>
+        <div class="col-12 col-md-7 col-lg-9">
+            <h3>Características y ventajas de nuestros kits</h3>
+            <ul>
+                <li><strong>Beneficio:</strong> Es una solución que esta lista para ser usada por ser TMB/H2O2; añadir, incubar, parar y leer. Este reactivo genera resultados homogéneos en los ensayos y reduce la variación.</li>
+                <li><strong>Estable:</strong> Estable durante 18 meses entre 2-8 °C, proporcionando una vida útil más larga; el producto final de ensayo es estable durante al menos una hora después de detener el ensayo.</li>
+                <li><strong>Seguro:</strong> Se suministra en un tampón ligeramente ácido, no peligroso y sin disolventes orgánicos; no daña a los plásticos utilizados en los sistemas automatizados.</li>
+                <li><strong>Sensible:</strong> Bajo ruido de fondo (background) y alta sensibilidad del ensayo.</li>
+            </ul>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <h5>LeishVElisa</h5>
+                <p>LeishVElisa es un ensayo inmunoenzimático indirecto, en cuya fase sólida los pozos están recubiertos con dominios inmunodominantes de antígenos citosólicos de L. infantum, los cuales han sido obtenidos por tecnología de ADN recombinante.</p>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5>CruziElisa</h5>
+                <p>CruziElisa es un ensayo inmunoenzimático indirecto, en cuya fase sólida los pozos están recubiertos con dominios inmunodominantes de antígenos citosólicos, membrana plasmática y membrana del glicosoma de T. cruzi, los cuales han sido obtenidos por tecnología de AdN recombinante. </p>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5>TMB Tetrametilbenzidina</h5>
+                <p>TMB y TMB/H2O2 es una solución segura, lista para ser usada en el trabajo para la detección de anticuerpos conjugados con la peroxidasa C de rábano (HRP) en un formato de ELISA. HRP conjugados con anticuerpos reaccionan con el sustrato cromogénico 3,3’,5,5’-tetrametilbencidina. </p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-12 mt-4 mb-4">
+          <div class="row">
+            <h3 class="text-center mb-4">Galeria</h3>
+              {% for item in gallery %}
+                <div class="col-12 col-md-4"><img src="{{ item.image.url }}" class="img-fluid gallery" /></div>
+              {% endfor %}
+          </div>
+        </div>
+
+      {% if posts %}
+        <div class="mb-4">
+          <div class="row">
+            <h3 class="text-center mb-4">News & Article</h3>
+              {% for post in posts %}
+                <div class="col-12 col-md-4">
+                  <div class="row">
+                    <div class="col-6">
+                      <img src="{{ post.image }}" class="img-fluid notice" />
+                    </div>
+                    <div class="col-6">
+                      <h5>{{ post.title }}</h5>
+                      <a href="{% url 'post' pk=post.pk %}" class="">Leer mas..</a>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+          </div>
+        </div>
+        </div>
+      {% endif %}
+    </div>
+{% endblock %}
